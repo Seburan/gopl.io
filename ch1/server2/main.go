@@ -20,7 +20,7 @@ var count int
 func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/count", counter)
-	log.Fatal(http.ListenAndServe("localhost:8000", nil))
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
 // handler echoes the Path component of the requested URL.

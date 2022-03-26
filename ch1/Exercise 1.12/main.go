@@ -18,6 +18,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -43,7 +44,23 @@ func main() {
 	if len(os.Args) > 1 && os.Args[1] == "web" {
 		//!+http
 		handler := func(w http.ResponseWriter, r *http.Request) {
-			lissajous(w)
+
+			// Ex 1.12 : read parameters from URL
+			if err := r.ParseForm(); err != nil {
+				log.Print(err)
+			}
+
+			var cycles float64;
+			var err error;
+			if r.Form.Has("cycles") {
+				cycles, err = strconv.ParseFloat(r.Form.Get("cycles"), 64);
+				log.Print("cycles = ", cycles);
+				if err != nil {
+					log.Print(err)
+				}
+			}
+
+			lissajous(w, cycles);
 		}
 		http.HandleFunc("/", handler)
 		//!-http
@@ -51,17 +68,18 @@ func main() {
 		return
 	}
 	//!+main
-	lissajous(os.Stdout)
+	lissajous(os.Stdout, 5)
 }
 
-func lissajous(out io.Writer) {
+func lissajous(out io.Writer, cycles float64) {
 	const (
-		cycles  = 5     // number of complete x oscillator revolutions
+		// cycles  = 5.0     // number of complete x oscillator revolutions
 		res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
 		nframes = 64    // number of animation frames
 		delay   = 8     // delay between frames in 10ms units
 	)
+
 	freq := rand.Float64() * 3.0 // relative frequency of y oscillator
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0 // phase difference
