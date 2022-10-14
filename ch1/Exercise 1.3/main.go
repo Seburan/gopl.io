@@ -8,9 +8,9 @@ import (
 )
 
 // echo1 implements same behavior as unix echo command
-func echo1(args []string){
+func echo1(args []string) {
 	var s, sep string
-	for i := 1; i < len(args); i++ {
+	for i := 0; i < len(args); i++ {
 		s += sep + args[i]
 		sep = " "
 	}
@@ -18,7 +18,7 @@ func echo1(args []string){
 }
 
 // echo2 implements same behavior as unix echo command
-func echo2(args []string){
+func echo2(args []string) {
 	s, sep := "", ""
 	for _, arg := range args {
 		s += sep + arg
@@ -28,7 +28,7 @@ func echo2(args []string){
 }
 
 // echo3 implements same behavior as unix echo command
-func echo3(args []string){
+func echo3(args []string) {
 	fmt.Println(strings.Join(args, " "))
 }
 
@@ -41,8 +41,8 @@ func printArgsOnePerLine(args []string) {
 }
 
 func main() {
-	echo1(os.Args[1:]);
-	echo2(os.Args[1:]);
-	echo3(os.Args[1:]);
-	printArgsOnePerLine(os.Args[1:]);
+	echo1(os.Args[1:])
+	echo2(os.Args[1:])
+	echo3(os.Args[1:])
+	printArgsOnePerLine(os.Args[1:])
 }
