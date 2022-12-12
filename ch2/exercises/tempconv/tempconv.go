@@ -8,7 +8,7 @@ package tempconv
 
 import "fmt"
 
-// Exercise 2.1 : Add types, constants, and functions for processing temperatire
+// Exercise 2.1 : Add types, constants, and functions for processing temperature
 // in the Kelvin scale
 type Celsius float64
 type Fahrenheit float64
@@ -18,14 +18,13 @@ const (
 	AbsoluteZeroC Celsius = -273.15
 	FreezingC     Celsius = 0
 	BoilingC      Celsius = 100
-	AbsoluteZeroK Kelvin = 0
-	FreezingK			Kelvin = 273.15
-	BoilingK			Kelvin = 373.15
+	AbsoluteZeroK Kelvin  = 0
+	FreezingK     Kelvin  = 273.15
+	BoilingK      Kelvin  = 373.15
 )
 
 func (c Celsius) String() string    { return fmt.Sprintf("%g°C", c) }
 func (f Fahrenheit) String() string { return fmt.Sprintf("%g°F", f) }
-func (k Kelvin) String() string    { return fmt.Sprintf("%g°K", k) }
-
+func (k Kelvin) String() string     { return fmt.Sprintf("%g°K", k) }
 
 //!-

@@ -18,15 +18,13 @@ func main() {
 		//fmt.Printf("PopCount of %d (%b) = %d\n", i, i, pc[i] )
 	}
 
-	var v uint64 = 0x1234567890ABCDEF;
+	var v uint64 = 0x1234567890ABCDEF
 	fmt.Printf("decimal : %d hex : %x  binary : %b\n", v, v, v)
-	fmt.Printf("popcount.PopCountByPreAllocation8bits(%x) = %d\n", v, popcount.PopCountByPreAllocation8bits(v));
-	fmt.Printf("popcount.PopCountByPreAllocation8bitsLoop(%x) = %d\n", v, popcount.PopCountByPreAllocation8bitsLoop(v));
-	fmt.Printf("popcount.PopCountByShiftingRight(%x) = %d\n", v, popcount.PopCountByShiftingRight(v));
-	fmt.Printf("popcount.PopCountByShiftingLeft(%x) = %d\n", v, popcount.PopCountByShiftingLeft(v));
-	fmt.Printf("popcount.PopCountByClearing(%x) = %d\n", v, popcount.PopCountByClearing(v));
-	fmt.Printf("popcount.BitCount(%x) = %d\n", v, popcount.BitCount(v));
+	fmt.Printf("popcount.PopCountByPreAllocation8bits(%x) = %d\n", v, popcount.PopCountByPreAllocation8bits(v))
+	fmt.Printf("popcount.PopCountByPreAllocation8bitsLoop(%x) = %d\n", v, popcount.PopCountByPreAllocation8bitsLoop(v))
+	fmt.Printf("popcount.PopCountByShiftingRight(%x) = %d\n", v, popcount.PopCountByShiftingRight(v))
+	fmt.Printf("popcount.PopCountByShiftingLeft(%x) = %d\n", v, popcount.PopCountByShiftingLeft(v))
+	fmt.Printf("popcount.PopCountByClearing(%x) = %d\n", v, popcount.PopCountByClearing(v))
+	fmt.Printf("popcount.BitCount	(%x) = %d\n", v, popcount.BitCount(v))
 
 }
-
-
