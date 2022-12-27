@@ -1,9 +1,7 @@
 // Copyright © 2016 Alan A. A. Donovan & Brian W. Kernighan.
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-// See page 133.
-
-// Outline prints the outline of an HTML document tree.
+// See page 134.
 
 // Exercise 5.7 : Develop startElement and endElement into a general HTML
 // pretty-printer. Print comment nodes, text nodes, and the attributes of each
